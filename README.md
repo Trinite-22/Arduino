@@ -22,16 +22,10 @@ Elles peuvent être configurées comme entrées ou sorties :
 * **Sorties** : Lorsqu’elles sont définies comme sorties, ces brochent peuvent appliquer une tension de 5v (HIGH) ou Ov (LOW).
 
 ### 3. Les broches PWM (Pulse Width Modulation / Modulation de Largeur D’Impulsion)
-
-<img width="359" height="361" alt="Capture d&#39;écran 2026-09-22 180857" src="https://github.com/user-attachments/assets/8906409c-af90-4a3a-b84c-5d1d3b12a1de" />
-
 Certaines broches numériques (11, 10, 9, 6, 5 et 3) sont marquées d’un `~` et supportent la modulation de largeur d’impulsion (PWM). Le PWM permet aux broches numériques de produire des tensions analogiques (variables) en sorties. Elles permettent de pouvoir contrôler des caractéristiques de certains composants électroniques comme la luminosité d’une Led ou la vitesse d’un moteur. Vous en apprendrez plus sur le PWM plus tard.
 
 ### 4. Les broches Analogiques
 Ce sont des Broches capable de mesurer une tension variable, c’est-à-dire une valeur qui peut changer progressivement entre 0 V et 5 V, contrairement aux broches numériques. Elles sont dites analogiques car elles sont capables de pouvoir lire des valeurs continues comme un faible/forte lumière ou une faible/forte température. Ce type de valeurs ne sont pas juste HIGH ou LOW donc uniquement les broches analogiques peuvent les recevoir et les analysées. Nous irons plus en profondeur sur ses broches au fur et à mesure que nous évoluerons.
-
-<img width="31" height="259" alt="Capture d&#39;écran 2026-09-22 181453" src="https://github.com/user-attachments/assets/52ac11c0-67f2-4e27-aa4d-b79fa5d93613" />
-
 
 ### 5. Le bouton Reset
 Le bouton Reset permet de pouvoir relancer le code téléversé sur l’arduino. 
@@ -69,6 +63,10 @@ Exécutez le fichier téléchargé et suivez les instructions de l'installateur.
 
 
 ### 3.Ajouter l'URL du gestionnaire de cartes ESP32 : Configuration.
+
+<img width="359" height="361" alt="Capture d&#39;écran 2026-09-22 180857" src="https://github.com/user-attachments/assets/8906409c-af90-4a3a-b84c-5d1d3b12a1de" />
+
+
 Dans l'IDE Arduino, cliquez sur Fichier > Préférences 
 Trouvez le champ intitulé "URL de gestionnaire de cartes supplémentaires" en bas de la fenêtre, puis copiez et collez ce lien exact :
 https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
@@ -81,7 +79,7 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 * Dans la barre de recherche du gestionnaire, tapez esp32.
 * Repérez le paquet nommé "esp32 by Espressif Systems" et cliquez sur le bouton Installer. Patientez pendant le téléchargement et l'installation de l'environnement (cela peut prendre quelques minutes selon votre connexion).
  
-
+<img width="31" height="259" alt="Capture d&#39;écran 2026-09-22 181453" src="https://github.com/user-attachments/assets/52ac11c0-67f2-4e27-aa4d-b79fa5d93613" />
 
 > **Vérification :** Une fois l'opération terminée, la mention "Installed" apparaît à côté du nom du paquet.
 
