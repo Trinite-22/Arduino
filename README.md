@@ -49,8 +49,8 @@ L’Arduino possède 2 ports d’alimentation : Un port USB qui permet d’alime
 ---
 
 ## Le logiciel Arduino IDE
+Il s'agit du logiciel qui va nous permetre de pouvoir rédiger le code qui sera téléverser sur la carte Arduino pour le bon fonctionement de nos projets 
 ### 1.Télécharger l'IDE Arduino:Prérequis.
-
 Le logiciel Arduino IDE fonctionne sur Mac, Windows et Linux. C’est grâce à ce logiciel que nous allons créer, tester et envoyer les programmes sur l’Arduino.
 L’IDE est téléchargeable à l’adresse suivante : [https://www.arduino.cc/en/software/](https://www.arduino.cc/en/software/).
 Nous allons utiliser la version : Arduino IDE 2.3.7.
