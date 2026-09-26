@@ -22,10 +22,16 @@ Elles peuvent être configurées comme entrées ou sorties :
 * **Sorties** : Lorsqu’elles sont définies comme sorties, ces brochent peuvent appliquer une tension de 5v (HIGH) ou Ov (LOW).
 
 ### 3. Les broches PWM (Pulse Width Modulation / Modulation de Largeur D’Impulsion)
+
+<img width="359" height="361" alt="Capture d&#39;écran 2026-09-22 180857" src="https://github.com/user-attachments/assets/8906409c-af90-4a3a-b84c-5d1d3b12a1de" />
+
 Certaines broches numériques (11, 10, 9, 6, 5 et 3) sont marquées d’un `~` et supportent la modulation de largeur d’impulsion (PWM). Le PWM permet aux broches numériques de produire des tensions analogiques (variables) en sorties. Elles permettent de pouvoir contrôler des caractéristiques de certains composants électroniques comme la luminosité d’une Led ou la vitesse d’un moteur. Vous en apprendrez plus sur le PWM plus tard.
 
 ### 4. Les broches Analogiques
 Ce sont des Broches capable de mesurer une tension variable, c’est-à-dire une valeur qui peut changer progressivement entre 0 V et 5 V, contrairement aux broches numériques. Elles sont dites analogiques car elles sont capables de pouvoir lire des valeurs continues comme un faible/forte lumière ou une faible/forte température. Ce type de valeurs ne sont pas juste HIGH ou LOW donc uniquement les broches analogiques peuvent les recevoir et les analysées. Nous irons plus en profondeur sur ses broches au fur et à mesure que nous évoluerons.
+
+<img width="31" height="259" alt="Capture d&#39;écran 2026-09-22 181453" src="https://github.com/user-attachments/assets/52ac11c0-67f2-4e27-aa4d-b79fa5d93613" />
+
 
 ### 5. Le bouton Reset
 Le bouton Reset permet de pouvoir relancer le code téléversé sur l’arduino. 
@@ -49,27 +55,47 @@ L’Arduino possède 2 ports d’alimentation : Un port USB qui permet d’alime
 ---
 
 ## Le logiciel Arduino IDE
+### 1.Télécharger l'IDE Arduino:Prérequis.
 
 Le logiciel Arduino IDE fonctionne sur Mac, Windows et Linux. C’est grâce à ce logiciel que nous allons créer, tester et envoyer les programmes sur l’Arduino.
 L’IDE est téléchargeable à l’adresse suivante : [https://www.arduino.cc/en/software/](https://www.arduino.cc/en/software/).
 Nous allons utiliser la version : Arduino IDE 2.3.7.
 
-![Interface Arduino IDE](images/ide-interface.png)
 
-Pour avoir ce rendu noir vous pouvez mettre votre IDE en mode sombre.
+### 2.Installer le logiciel : Environ 2 minutes.
+Exécutez le fichier téléchargé et suivez les instructions de l'installateur. Laissez les options par défaut cochées, et assurez-vous d'autoriser l'installation des pilotes (drivers) USB si votre système d'exploitation vous le demande.
 
-**Etapes :**
+> **Vérification:** Lancez l'application Arduino IDE. Vous devriez voir s'ouvrir une fenêtre blanche avec un code minimal pré-écrit contenant void setup() et void loop().
 
-1. Aller sur **Fichier** :
-   ![Menu Fichier](images/ide-menu.png)
-2. Cliquer sur **Préférences** :
-   ![Menu Préférences](images/ide-preferences.png)
-3. Vous verrez une petite fenêtre où vous pourrez changer votre mode d’éclairage :
-   ![Changement de thème](images/ide-theme.png)
 
-Voilà votre IDE est en mode sombre. 
+### 3.Ajouter l'URL du gestionnaire de cartes ESP32 : Configuration.
+Dans l'IDE Arduino, cliquez sur Fichier > Préférences 
+Trouvez le champ intitulé "URL de gestionnaire de cartes supplémentaires" en bas de la fenêtre, puis copiez et collez ce lien exact :
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+* Si vous avez déjà une autre URL dans ce champ, séparez-les par une virgule. Cliquez sur OK.
+> **Vérification :** La fenêtre des préférences se ferme sans afficher de message d'erreur, confirmant que le lien est bien pris en compte.
 
----
 
-## Chap 2 : Ecrire tes premiers codes
-*(À venir)*
+### 4.Installer les paquets ESP32: Téléchargement requis.
+* Allez dans le menu Outils > Type de carte > Gestionnaire de cartes (ou cliquez sur l'icône de carte dans la barre latérale gauche).
+* Dans la barre de recherche du gestionnaire, tapez esp32.
+* Repérez le paquet nommé "esp32 by Espressif Systems" et cliquez sur le bouton Installer. Patientez pendant le téléchargement et l'installation de l'environnement (cela peut prendre quelques minutes selon votre connexion).
+ 
+
+
+> **Vérification :** Une fois l'opération terminée, la mention "Installed" apparaît à côté du nom du paquet.
+
+
+### 5.Sélectionner votre modèle d'ESP32:
+Branchez votre carte ESP32 à votre ordinateur à l'aide d'un câble USB. Allez dans le menu Outils > Type de carte, descendez jusqu'au dossier esp32, puis sélectionnez le modèle exact de votre carte (le plus courant est DOIT ESP32 DEVKIT V1 ou ESP32 Dev Module). Optez pour ESP32 Dev Module
+
+> **Vérification :** Retournez dans le menu Outils. Le nom de la carte que vous venez de choisir doit être affiché à côté de "Type de carte".
+
+
+### 6.Sélectionner le port de communication :
+Après avoir brancher votre carte, allez dans le menu Outils > Port et sélectionnez le port sur lequel l'ordinateur a reconnu votre ESP32.
+* Sur Windows : il s'agit généralement d'un port nommé COM suivi d'un numéro (ex: COM3, COM4).
+* Sur Mac/Linux : le port ressemble à /dev/cu.usbserial-xxxx ou /dev/ttyUSB0.
+
+> **Vérification :** Le nom de votre carte ESP32 ainsi que le port que vous venez de sélectionner s'affichent correctement ensemble dans la barre d'état en bas à droite de la fenêtre de l'IDE.
+
