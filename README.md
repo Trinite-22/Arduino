@@ -62,38 +62,3 @@ Exécutez le fichier téléchargé et suivez les instructions de l'installateur.
 > **Vérification:** Lancez l'application Arduino IDE. Vous devriez voir s'ouvrir une fenêtre blanche avec un code minimal pré-écrit contenant void setup() et void loop().
 
 
-### 3.Ajouter l'URL du gestionnaire de cartes ESP32 : Configuration.
-
-<img width="359" height="361" alt="Capture d&#39;écran 2026-09-22 180857" src="https://github.com/user-attachments/assets/8906409c-af90-4a3a-b84c-5d1d3b12a1de" />
-
-
-Dans l'IDE Arduino, cliquez sur Fichier > Préférences 
-Trouvez le champ intitulé "URL de gestionnaire de cartes supplémentaires" en bas de la fenêtre, puis copiez et collez ce lien exact :
-https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-* Si vous avez déjà une autre URL dans ce champ, séparez-les par une virgule. Cliquez sur OK.
-> **Vérification :** La fenêtre des préférences se ferme sans afficher de message d'erreur, confirmant que le lien est bien pris en compte.
-
-
-### 4.Installer les paquets ESP32: Téléchargement requis.
-* Allez dans le menu Outils > Type de carte > Gestionnaire de cartes (ou cliquez sur l'icône de carte dans la barre latérale gauche).
-* Dans la barre de recherche du gestionnaire, tapez esp32.
-* Repérez le paquet nommé "esp32 by Espressif Systems" et cliquez sur le bouton Installer. Patientez pendant le téléchargement et l'installation de l'environnement (cela peut prendre quelques minutes selon votre connexion).
- 
-<img width="31" height="259" alt="Capture d&#39;écran 2026-09-22 181453" src="https://github.com/user-attachments/assets/52ac11c0-67f2-4e27-aa4d-b79fa5d93613" />
-
-> **Vérification :** Une fois l'opération terminée, la mention "Installed" apparaît à côté du nom du paquet.
-
-
-### 5.Sélectionner votre modèle d'ESP32:
-Branchez votre carte ESP32 à votre ordinateur à l'aide d'un câble USB. Allez dans le menu Outils > Type de carte, descendez jusqu'au dossier esp32, puis sélectionnez le modèle exact de votre carte (le plus courant est DOIT ESP32 DEVKIT V1 ou ESP32 Dev Module). Optez pour ESP32 Dev Module
-
-> **Vérification :** Retournez dans le menu Outils. Le nom de la carte que vous venez de choisir doit être affiché à côté de "Type de carte".
-
-
-### 6.Sélectionner le port de communication :
-Après avoir brancher votre carte, allez dans le menu Outils > Port et sélectionnez le port sur lequel l'ordinateur a reconnu votre ESP32.
-* Sur Windows : il s'agit généralement d'un port nommé COM suivi d'un numéro (ex: COM3, COM4).
-* Sur Mac/Linux : le port ressemble à /dev/cu.usbserial-xxxx ou /dev/ttyUSB0.
-
-> **Vérification :** Le nom de votre carte ESP32 ainsi que le port que vous venez de sélectionner s'affichent correctement ensemble dans la barre d'état en bas à droite de la fenêtre de l'IDE.
-
